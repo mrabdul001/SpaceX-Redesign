@@ -1,0 +1,382 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;700&display=swap");
+@import "./variables.css";
+@import "./utilities.css";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  color: var(--pure);
+  height: 4000px;
+  background: var(--primary);
+}
+
+header {
+  background: linear-gradient(135deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.2)),
+    url("../img/sunrise.jpg");
+  min-height: 100vh;
+  background-size: cover;
+}
+
+header nav {
+  padding: 20px 40px 20px 100px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-content: center;
+  border-bottom: 1px solid var(--gray);
+}
+header nav .nav-right {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header nav .nav-right a {
+  text-decoration: none;
+  color: var(--pure);
+  margin-right: 30px;
+  position: relative;
+}
+
+header nav .nav-right a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -20px;
+  width: 0;
+  height: 2px;
+  background: var(--pure);
+  transition: 0.3s ease-in-out;
+}
+header nav .nav-right a.active::after {
+  width: 70%;
+}
+header nav .nav-right a:hover::after {
+  width: 70%;
+}
+
+header nav .nav-right .search > div {
+  background: var(--dark);
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  border-radius: 50px;
+}
+
+header nav .nav-right .search > div input {
+  background: transparent;
+  border: none;
+  outline: none;
+  font: 16px;
+  color: #fff;
+}
+
+header nav .nav-right .search > div img {
+  padding-right: 16px;
+}
+
+/* // hero section  */
+
+.socail {
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-right: 1px solid var(--gray);
+  width: 100px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 90vh;
+}
+
+.socail div {
+  border: 2px solid var(--pure);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+  opacity: 0;
+  /* animation: moveIn 1s ease-in-out forwards; */
+}
+@keyframes moveIn {
+  from {
+    transform: translateX(-100px);
+  }
+
+  to {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+.socail svg path {
+  fill: var(--pure);
+}
+
+.socail div:hover svg path {
+  fill: var(--dark);
+  transition: 0.5s ease-in-out;
+}
+
+.socail div:hover {
+  background: var(--pure);
+}
+
+.hero {
+  position: relative;
+}
+
+.hero .cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: calc(100vh - 80px);
+}
+.hero .cta h1 {
+  font-weight: 400;
+  font: 18px;
+  line-height: 1.7;
+  margin-bottom: 30px;
+}
+
+.hero .cta > div {
+  flex: 1;
+}
+
+.hero .cta .right-cta img {
+  height: 70vh;
+  margin-left: 30px;
+  animation: moveAstro 5s ease-in-out infinite alternate;
+  rotate: 30deg;
+}
+
+@keyframes moveAstro {
+  50% {
+    transform: translateY(100px) rotate(-30deg) scale(0.3);
+  }
+}
+
+.lanch-section {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px 0;
+  background: var(--dark);
+}
+
+.roket-section {
+  display: grid;
+  grid-template-columns: 1fr 100px 1fr;
+  grid-gap: 80px;
+  padding: 100px 0;
+}
+
+.roket-section .roket {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.roket-section .roket span {
+  font-size: 0;
+  position: relative;
+}
+
+.roket-section .roket img {
+  width: 100%;
+}
+
+.roket-section .block {
+  width: 90%;
+}
+
+.roket-section .block h1 {
+  font-size: 32px;
+  font-weight: 400;
+}
+.roket-section .block .w-underline {
+  position: relative;
+  margin-bottom: 38px;
+}
+.roket-section .block .w-underline::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -12px;
+  display: block;
+  width: 48%;
+  height: 2px;
+  background: var(--pure);
+}
+.roket-section .block h1.w-underline::before {
+  width: 20%;
+}
+
+.roket-section .block p {
+  line-height: 1.6;
+}
+.roket-section .block h2 {
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.roket-section .right-block .payload {
+  padding-top: 130px;
+}
+
+.roket-section .left-block .dragon {
+  padding-top: 120px;
+}
+
+.roket-section .block button {
+  margin-top: 30px;
+}
+
+.roket-section .left-block .composite {
+  padding-top: 60px;
+}
+.roket-section .left-block .firstsage {
+  padding-top: 60px;
+}
+
+.roket-section .left-block .capacity {
+  display: flex;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.roket-section .left-block .capacity > div:first-child {
+  margin-right: 40px;
+}
+
+.roket-section .left-block .capacity h4 {
+  font-size: 12px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.roket-section .left-block .capacity h6 {
+  font-size: 40px;
+  font-weight: 400;
+}
+
+.roket-section .left-block .capacity h6 small {
+  font-size: 12px;
+}
+
+.roket-section .right-block .payload .payload-text {
+  padding-left: 80px;
+}
+
+.roket-section .right-block .secondstage {
+  padding-top: 60px;
+}
+
+.roket-section .right-block .capacity {
+  display: flex;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.roket-section .right-block .capacity > div:first-child {
+  margin-right: 40px;
+}
+
+.roket-section .right-block .capacity h4 {
+  font-size: 12px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.roket-section .right-block .capacity h6 {
+  font-size: 40px;
+  font-weight: 400;
+}
+
+.roket-section .right-block.capacity h6 small {
+  font-size: 12px;
+}
+
+.roket-section .right-block .block .engine {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 40px;
+}
+
+.roket-section .right-block .block .engine img {
+  width: 180px;
+}
+.roket-section .right-block .block .marine {
+  padding-top: 100px;
+}
+
+.roket-section .right-block .block .marine h2 {
+  font-size: 14px;
+  padding-left: 50px;
+}
+
+.roket-section .right-block .floating-graphic {
+  position: sticky;
+  float: right;
+  top: 60px;
+  margin-right: -90px;
+}
+
+.roket-section .right-block .floating-graphic img {
+  height: 250px;
+}
+.roket-section .roket span:after,
+.roket-section .roket span:nth-child(3):before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: var(--pure);
+  transition: width 1s ease-in-out;
+}
+
+.roket-section .roket span:nth-child(1):after {
+  bottom: 16px;
+  left: 96%;
+}
+
+.roket-section .roket span:nth-child(2):after {
+  bottom: 62%;
+  right: 100%;
+}
+
+.roket-section .roket span:nth-child(3):after {
+  bottom: 64%;
+  right: 90%;
+}
+
+.roket-section .roket span:nth-child(3):before {
+  bottom: 36%;
+  left: 90%;
+}
+
+.roket-section .roket span.active:nth-child(1):after {
+  width: 120px;
+}
+
+.roket-section .roket span.active:nth-child(2):after {
+  width: 180px;
+}
+
+.roket-section .roket span.active:nth-child(3):after {
+  width: 200px;
+}
+.roket-section .roket span.active:nth-child(3):before {
+  width: 160px;
+}
